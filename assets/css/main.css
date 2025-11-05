@@ -3764,7 +3764,7 @@ START: Theme Search CSS
   }
 }
 .hamburger_bg {
-  background-color: var(--tj-color-theme-dark);
+  background-color: #caeaef;
   height: 100%;
   width: 100%;
   position: absolute;
