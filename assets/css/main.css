@@ -16000,6 +16000,7 @@ blockquote cite::before {
      -moz-column-gap: 8px;
           column-gap: 8px;
   padding: 20px 0;
+  align-items: center
 }
 .infos-item:last-child {
   border-bottom: none;
