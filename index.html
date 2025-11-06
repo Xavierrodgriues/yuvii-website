@@ -2126,6 +2126,54 @@
   <script src="assets/js/wow.min.js"></script>
   <script src="assets/js/meanmenu.js"></script>
   <script src="assets/js/main.js"></script>
+  <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  // Counter animation function
+  function animateCounters() {
+    $('.count-inner .inline-content span:last-child').each(function() {
+      let $this = $(this);
+      let text = $this.text().trim();      // e.g., "1200+" or "97%"
+      let num = parseFloat(text);          // extract numeric part
+      let isPercent = text.includes('%');
+      let isPlus = text.includes('+');
+      
+      if (isNaN(num)) return; // skip if no number found
+
+      $this.prop('Counter', 0).animate({
+        Counter: num
+      }, {
+        duration: 2000,
+        easing: 'swing',
+        step: function(now) {
+          // Update text while animating
+          $this.text(Math.ceil(now) + (isPercent ? '%' : isPlus ? '+' : ''));
+        }
+      });
+    });
+  }
+
+  // Run animation when section becomes visible
+  function isScrolledIntoView(elem) {
+    let docViewTop = $(window).scrollTop();
+    let docViewBottom = docViewTop + $(window).height();
+    let elemTop = $(elem).offset().top;
+    let elemBottom = elemTop + $(elem).height();
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+  }
+
+  let animated = false;
+  $(window).on('scroll load', function() {
+    if (!animated && isScrolledIntoView($('.tj-about-section'))) {
+      animateCounters();
+      animated = true;
+    }
+  });
+});
+</script>
+
 </body>
 
 </html>
