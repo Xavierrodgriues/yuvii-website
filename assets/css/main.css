@@ -3024,6 +3024,9 @@ START: Theme Footer CSS
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+
+/* footer responsive by xavier */
 /* Mobile: left-align phone number and social icons in footer */
 @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   /* Ensure the contact list starts from the left instead of centered */
