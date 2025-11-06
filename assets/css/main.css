@@ -9747,7 +9747,7 @@ START: Services CSS
   font-size: 70px;
   width: 80px;
   height: 80px;
-  background: linear-gradient(-45deg, rgba(30, 138, 138, 0.3) 0%, rgba(30, 138, 138, 0) 50%, rgba(30, 138, 138, 0.3) 100%);
+  background: linear-gradient(-45deg, rgb(30 31 138 / 30%) 0%, rgb(0 7 89 / 0%) 50%, rgb(42 30 138 / 30%) 100%);
   border-radius: 50%;
   border: 1px solid rgba(30, 138, 138, 0.15);
   display: -webkit-inline-box;
@@ -28701,4 +28701,9 @@ START: Blog CSS
 
 .text-white{
   color: black !important;
+}
+
+
+.swiper{
+  margin-bottom: 4rem;
 }
