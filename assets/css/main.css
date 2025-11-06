@@ -89,7 +89,8 @@ START: Theme Default CSS
   --tj-color-text-body-3: #67787a;
   --tj-color-text-body-4: #18292c;
   --tj-color-text-body-5: rgba(255, 255, 255, 0.8);
-  --tj-color-theme-primary: #1e8a8a;
+  /* --tj-color-theme-primary: #1e8a8a; */
+  --tj-color-theme-primary: #30b0bf;
   --tj-color-theme-bg: #d8e5e5;
   --tj-color-theme-bg-2: #cee0e0;
   --tj-color-theme-bg-3: #202e30;
@@ -719,7 +720,7 @@ img {
           justify-content: center;
   gap: 10px;
   position: relative;
-  background-color: var(--tj-color-theme-primary);
+  background-color: #30b0bf;
   font-size: 16px;
   font-weight: var(--tj-fw-sbold);
   padding: 5px 5px 5px 25px;
@@ -980,7 +981,7 @@ START: Theme Header CSS
   --bs-gutter-x: 0;
 }
 .header-area.header-2.header-absolute .header-wrapper {
-  background-color: rgba(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.479);
   backdrop-filter: blur(10px);
   padding: 0 20px;
   border-radius: 14px;
@@ -9672,7 +9673,7 @@ START: About CSS
 START: Services CSS
 ----------------------------------------*/
 .tj-service-section {
-  background-color: var(--tj-color-theme-dark);
+  background-color: black;
   border-radius: 12px;
   position: relative;
   z-index: 1;
@@ -13677,8 +13678,7 @@ START: Theme Slider CSS
   width: 100%;
   height: 100%;
   z-index: 2;
-  background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgb(12, 30, 33)), color-stop(60%, rgba(12, 30, 33, 0.4)), to(rgba(12, 30, 33, 0.1)));
-  background: linear-gradient(90deg, rgb(12, 30, 33) 20%, rgba(12, 30, 33, 0.4) 60%, rgba(12, 30, 33, 0.1) 100%);
+  
 }
 .tj-slider-item .slider-wrapper {
   padding: 195px 0 347px;
