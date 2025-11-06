@@ -7534,6 +7534,8 @@ START: Heading CSS
 .sec-heading .sub-title.text-white {
   border-color: rgba(255, 255, 255, 0.15);
 }
+
+
 @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .sec-heading .sub-title {
     font-size: 13px;
@@ -9673,7 +9675,8 @@ START: About CSS
 START: Services CSS
 ----------------------------------------*/
 .tj-service-section {
-  background-color: black;
+  /* background-color: black; */
+  background-color: white;
   border-radius: 12px;
   position: relative;
   z-index: 1;
@@ -9785,8 +9788,11 @@ START: Services CSS
   transition: none;
 }
 .service-item .title a:hover {
-  color: var(--tj-color-theme-primary);
+  /* color: var(--tj-color-theme-primary); */
+  color: white
 }
+
+
 .service-item .desc {
   margin-bottom: 0;
 }
@@ -9879,7 +9885,8 @@ START: Services CSS
   color: var(--tj-color-common-white);
 }
 .service-item.style-1 .service-content .title a:hover {
-  color: var(--tj-color-theme-primary);
+  /* color: var(--tj-color-theme-primary); */
+  color: white;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .service-item.style-1 .service-content .title {
@@ -10031,8 +10038,9 @@ START: Services CSS
   color: var(--tj-color-text-body-2);
 }
 .service-item.style-2:hover {
-  background-color: var(--tj-color-theme-dark-2);
+  /* background-color: var(--tj-color-theme-dark-2); */
   border-color: var(--tj-color-theme-dark-2);
+  
 }
 .service-item.style-2:hover .service-icon i {
   -webkit-transform: rotateY(360deg);
@@ -28689,3 +28697,7 @@ START: Blog CSS
 }
 
 /* !END: Blog CSS *//*# sourceMappingURL=main.css.map */
+
+.text-white{
+  color: black !important;
+}
