@@ -2648,11 +2648,11 @@ START: Theme Footer CSS
   opacity: 1;
 }
 .social-links.style-3 ul li a {
-  background-color: var(--tj-color-common-white);
-  opacity: 0.3;
+  background-color: #332877;
+  /* opacity: 0.3; */
 }
 .social-links.style-3 ul li a i {
-  color: var(--tj-color-theme-dark);
+  color: var(--tj-color-common-white);
 }
 .social-links.style-3 ul li a:hover {
   background-color: var(--tj-color-theme-primary);
