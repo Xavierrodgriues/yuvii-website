@@ -94,7 +94,7 @@ START: Theme Default CSS
   --tj-color-theme-bg: #33287742;
   --tj-color-theme-bg-2: #cee0e0;
   --tj-color-theme-bg-3: #202e30;
-  --tj-color-theme-dark: #0c1e21;
+  /* --tj-color-theme-dark: #0c1e21; loading color skeleton effect*/ 
   --tj-color-theme-dark-2: #18292c;
   --tj-color-theme-dark-3: #364e52;
   --tj-color-theme-dark-4: #67787a;
@@ -2527,7 +2527,7 @@ START: Theme Footer CSS
 }
 @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .tj-footer-section {
-    padding-top: 270px;
+    padding-top: 0px;
     margin-bottom: 0;
     border-end-start-radius: 0;
     border-end-end-radius: 0;
@@ -3791,7 +3791,8 @@ START: Theme Search CSS
   }
 }
 .hamburger_bg {
-  background-color: #332877a8;
+  /* background-color: #332877a8; */
+  background-color: #ffffffa8;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -3844,7 +3845,8 @@ START: Theme Search CSS
   display: inline-block;
   font-size: 35px;
   line-height: 1;
-  color: var(--tj-color-common-white);
+  /* color: var(--tj-color-common-white); */
+  color: black;
 }
 @media (max-width: 575px) {
   .hamburger_close_btn {
