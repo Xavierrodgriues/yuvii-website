@@ -3975,6 +3975,7 @@ START: Theme Search CSS
   top: 12px;
   -webkit-transition: all 0.4s ease-in-out 0s;
   transition: all 0.4s ease-in-out 0s;
+  color: black;
 }
 .hamburger_menu .mean-nav ul li a.mean-expand:hover {
   color: var(--tj-color-common-white);
