@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="assets/css/odometer-theme-default.css">
   <link rel="stylesheet" href="assets/css/meanmenu.css">
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </head>
 
 <body>
@@ -193,9 +195,9 @@
               <nav id="mobile-menu" class="mainmenu">
                 <ul>
                   <li class=""><a href="index.html" style="color: black;">Home</a>
-                   
+
                   </li>
-                  
+
                   <li class="has-dropdown "><a href="service.html" style="color: black;">Services</a>
                     <ul class="sub-menu  mega-menu-service">
                       <li> <a class="mega-menu-service-single" href="staffing.html"> <span
@@ -325,9 +327,9 @@
               <nav class="mainmenu">
                 <ul>
                   <li class=" current-menu-ancestor"><a href="index.html">Home</a>
-                    
+
                   </li>
-                  
+
                   <li class="has-dropdown "><a href="service.html" style="color: black;">Services</a>
                     <ul class="sub-menu  mega-menu-service">
                       <li> <a class="mega-menu-service-single" href="staffing.html"> <span
@@ -851,21 +853,21 @@
 
                     <!-- Form Submission Feedback -->
                     <script>
-  document.getElementById('contact-form').addEventListener('submit', async function (event) {
-    event.preventDefault();
-    const form = event.target;
-    const formData = new FormData(form);
+                      document.getElementById('contact-form').addEventListener('submit', async function (event) {
+                        event.preventDefault();
+                        const form = event.target;
+                        const formData = new FormData(form);
 
-    // Get button and original text
-    const submitBtn = form.querySelector('.tj-primary-btn');
-    const btnText = submitBtn.querySelector('.btn-text span');
-    const btnIcon = submitBtn.querySelector('.btn-icon');
+                        // Get button and original text
+                        const submitBtn = form.querySelector('.tj-primary-btn');
+                        const btnText = submitBtn.querySelector('.btn-text span');
+                        const btnIcon = submitBtn.querySelector('.btn-icon');
 
-    // Save original content and disable the button
-    const originalText = btnText.textContent;
-    submitBtn.disabled = true;
-    btnText.textContent = 'Sending...';
-    btnIcon.innerHTML = `<span class="loader" style="
+                        // Save original content and disable the button
+                        const originalText = btnText.textContent;
+                        submitBtn.disabled = true;
+                        btnText.textContent = 'Sending...';
+                        btnIcon.innerHTML = `<span class="loader" style="
         display:inline-block;
         width:16px;
         height:16px;
@@ -875,39 +877,62 @@
         animation:spin 0.8s linear infinite;
       "></span>`;
 
-    // Add spinning animation keyframes
-    const style = document.createElement('style');
-    style.innerHTML = `
+                        // Add spinning animation keyframes
+                        const style = document.createElement('style');
+                        style.innerHTML = `
       @keyframes spin {
         from { transform: rotate(0deg); }
         to { transform: rotate(360deg); }
       }
     `;
-    document.head.appendChild(style);
+                        document.head.appendChild(style);
 
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
+                        try {
+                          const response = await fetch(form.action, {
+                            method: form.method,
+                            body: formData,
+                            headers: { 'Accept': 'application/json' }
+                          });
 
-      if (response.ok) {
-        alert('✅ Your message has been sent successfully!');
-        form.reset();
-      } else {
-        alert('❌ Oops! Something went wrong. Please try again.');
-      }
-    } catch (error) {
-      alert('⚠️ Network error. Please try again later.');
-    } finally {
-      // Restore button state
-      submitBtn.disabled = false;
-      btnText.textContent = originalText;
-      btnIcon.innerHTML = `<i class="tji-arrow-right-long"></i>`;
-    }
-  });
-</script>
+                          if (response.ok) {
+                            Toastify({
+                              text: "Message sent successfully!",
+                              duration: 4000,
+                              close: true,
+                              gravity: "top", // "top" or "bottom"
+                              position: "center", // "left", "center" or "right"
+                              backgroundColor: "#0f5132",
+                              stopOnFocus: true, // pauses on hover
+                            }).showToast();
+                            form.reset();
+                          } else {
+                            Toastify({
+                            text: "Network error. Please check your connection.",
+                            duration: 4000,
+                            close: true,
+                            gravity: "bottom",
+                            position: "right",
+                            backgroundColor: "#b54708", // deep amber orange
+                          }).showToast();
+
+                          }
+                        } catch (error) {
+                          Toastify({
+                          text: "❌ Something went wrong. Please try again later.",
+                          duration: 4000,
+                          close: true,
+                          gravity: "bottom",
+                          position: "right",
+                          backgroundColor: "#842029", // deep crimson red
+                        }).showToast();
+                        } finally {
+                          // Restore button state
+                          submitBtn.disabled = false;
+                          btnText.textContent = originalText;
+                          btnIcon.innerHTML = `<i class="tji-arrow-right-long"></i>`;
+                        }
+                      });
+                    </script>
 
                   </form>
 
